@@ -10,9 +10,10 @@
 }
 
 .bank-logo img {
-  width: 82%;
-  height: 82%;
+  width: 86%;
+  height: 86%;
   object-fit: contain;
+  object-position: center;
 }
 
 .bank-logo--mono {

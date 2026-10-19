@@ -186,6 +186,7 @@ export const PAYMENT_ORIGINS = [
 ];
 export const PAYMENT_ORIGIN = toMap(PAYMENT_ORIGINS);
 
+/** Bank catalog: `value` must match the API `bank` field; `logo` is served from /public/banks. */
 export const BANKS = [
   { value: "attijariwafa", label: "Attijariwafa bank", short: "AWB", color: "#f39200", logo: "/banks/attijariwafa.png" },
   { value: "banque_populaire", label: "Banque Populaire", short: "BP", color: "#e5731b", logo: "/banks/banque_populaire.png" },
@@ -194,12 +195,12 @@ export const BANKS = [
   { value: "saham", label: "Saham Bank", short: "SB", color: "#c8102e", logo: "/banks/saham.png", hint: "ex-Société Générale" },
   { value: "bmci", label: "BMCI", short: "BMCI", color: "#00915a", logo: "/banks/bmci.png" },
   { value: "credit_agricole", label: "Crédit Agricole du Maroc", short: "CAM", color: "#00843d", logo: "/banks/credit_agricole.png" },
-  { value: "credit_du_maroc", label: "Crédit du Maroc", short: "CDM", color: "#008c82" },
+  { value: "credit_du_maroc", label: "Crédit du Maroc", short: "CDM", color: "#0071ce", logo: "/banks/credit_du_maroc.svg" },
   { value: "cfg", label: "CFG Bank", short: "CFG", color: "#e30613", logo: "/banks/cfg.png" },
   { value: "al_barid", label: "Al Barid Bank", short: "ABB", color: "#d9a800", logo: "/banks/al_barid.png" },
-  { value: "umnia", label: "Umnia Bank", short: "UB", color: "#6d2077" },
+  { value: "umnia", label: "Umnia Bank", short: "UB", color: "#84122E", logo: "/banks/umnia.png" },
   { value: "assafa", label: "Bank Assafa", short: "BA", color: "#00a651", logo: "/banks/assafa.png" },
-  { value: "al_akhdar", label: "Al Akhdar Bank", short: "AAB", color: "#3c8d2f" },
+  { value: "al_akhdar", label: "Al Akhdar Bank", short: "AAB", color: "#3c8d2f", logo: "/banks/al_akhdar.png" },
   { value: "autre", label: "Autre banque", short: "…", color: "#8a7f74" },
 ];
 export const BANK = toMap(BANKS);

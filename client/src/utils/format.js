@@ -7,15 +7,15 @@ export function formatNumber(value) {
   return value == null || Number.isNaN(Number(value)) ? "—" : numberFormat.format(value);
 }
 
+/** Full MAD amount for display (mock or API numbers). Always complete digits — never k/M. */
 export function formatMAD(value) {
-  return value == null ? "—" : `${numberFormat.format(value)} MAD`;
+  if (value == null || value === "") return "—";
+  const amount = Number(value);
+  return Number.isFinite(amount) ? `${numberFormat.format(amount)} MAD` : "—";
 }
 
+/** Same as formatMAD — kept for existing call sites; full amounts stay readable with the backend. */
 export function formatCompactMAD(value) {
-  if (value == null) return "—";
-  const abs = Math.abs(value);
-  if (abs >= 1_000_000) return `${(value / 1_000_000).toLocaleString("fr-FR", { maximumFractionDigits: 2 })} M MAD`;
-  if (abs >= 10_000) return `${Math.round(value / 1_000).toLocaleString("fr-FR")} k MAD`;
   return formatMAD(value);
 }
 

@@ -7,15 +7,16 @@ export function BankLogo({ bank, size = 28 }) {
   const [broken, setBroken] = useState(false);
   const style = { width: size, height: size, "--bank-color": meta?.color ?? "var(--c-taupe-400)" };
 
+  // Resolves from BANK catalog by API `bank` code — works for mock data and real backend payloads.
   if (meta?.logo && !broken) {
     return (
-      <span className="bank-logo" style={style}>
-        <img src={meta.logo} alt="" onError={() => setBroken(true)} />
+      <span className="bank-logo" style={style} title={meta.label}>
+        <img src={meta.logo} alt={meta.label} onError={() => setBroken(true)} />
       </span>
     );
   }
   return (
-    <span className="bank-logo bank-logo--mono" style={{ ...style, fontSize: size * (meta?.short?.length > 3 ? 0.26 : 0.32) }}>
+    <span className="bank-logo bank-logo--mono" style={{ ...style, fontSize: size * (meta?.short?.length > 3 ? 0.26 : 0.32) }} title={meta?.label}>
       {meta?.short ?? "?"}
     </span>
   );
